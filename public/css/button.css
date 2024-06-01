@@ -1,0 +1,99 @@
+.btn-3d {
+    position: relative;
+    display: block;
+    margin: 50px auto;
+    width: 150px;
+    height: 50px;
+    perspective: 800px;
+    opacity: 0; /* Ban đầu opacity là 0 */
+    transform: translateY(50px); /* Ban đầu dịch chuyển */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.btn-3d.active {
+    opacity: 1; /* Khi active opacity là 1 */
+    transform: translateY(0px); /* Khi active dịch chuyển về vị trí ban đầu */
+}
+.btn-3d a {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform .25s;
+}
+
+.btn-3d a .front,
+.btn-3d a .top {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(84, 223, 167,1);
+    box-sizing: border-box;
+}
+
+.btn-3d a .front {
+    color: #fff;
+    background: #54dfa7;
+    transform: translateZ(25px);
+}
+
+.btn-3d a .top {
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-3d a:hover {
+    transform: rotateX(-90deg);
+}
+/*  */
+.btn-4d {
+    position: relative;
+    display: block;
+    margin: 50px auto;
+    width: 150px;
+    height: 50px;
+    perspective: 800px;
+    opacity: 0; /* Ban đầu opacity là 0 */
+    transform: translateY(50px); /* Ban đầu dịch chuyển */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.btn-4d.active {
+    opacity: 1; /* Khi active opacity là 1 */
+    transform: translateY(0px); /* Khi active dịch chuyển về vị trí ban đầu */
+}
+.btn-4d a {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform .25s;
+}
+
+.btn-4d a .front,
+.btn-4d a .top {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(84, 223, 167,1);
+    box-sizing: border-box;
+}
+
+.btn-4d a .front {
+    color: #fff;
+    background: #54dfa7;
+    transform: translateZ(25px);
+}
+
+.btn-4d a .top {
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-4d a:hover {
+    transform: rotateX(-90deg);
+}

@@ -1,0 +1,38 @@
+/* body {
+    background: url(../tuan3/images/9ebede8d5740c528453d488b876b9193.jpg);
+    width: 100%;
+    background-size: cover;
+} */
+
+.snow {
+
+    font-size: 30px;
+    color: rgb(182, 237, 218);
+    /* background: rgb(59, 193, 146); */
+    
+    position: fixed;
+    top: 0;
+    /* tuyết rơi bình thường xuống */
+    /* tuyết rơi ease in out bắt đầu và kết thúc chậm  */
+    animation: fall 3s infinite linear, fluctuate 1s infinite alternate ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes fluctuate {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(50px);
+    }
+}

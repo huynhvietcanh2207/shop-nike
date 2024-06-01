@@ -1,0 +1,60 @@
+.side-nav{
+    /* fixed giu */
+    position: fixed;
+    top: 23%;
+    right: 0;
+}
+/* box shadow */
+.side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.7);
+}
+.side-nav ul li{
+    background: #54dfa7;
+    position: relative;
+    padding: 15px;
+}
+.side-nav ul li::before{
+    content: '';
+    
+    background:  url(../image/sidemenu-icons.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+.side-nav ul li:nth-child(2)::before{background-position:0 -100px;}
+.side-nav ul li:nth-child(3)::before{background-position:0 -200px;}
+
+/* ::before:hover */
+.side-nav ul li:nth-child(1):hover::before{background-position:0 -50px;}
+.side-nav ul li:nth-child(2):hover::before{background-position:0 -150px;}
+
+.side-nav ul li:nth-child(3):hover::before{background-position:0 -250px;}
+
+.side-nav ul li a{
+    position: absolute;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    inset: 0;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0,.7);
+    padding: 15px 40px;
+    z-index: -1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px 0 0 10px;
+    transition: .5s ease-in-out;
+
+}
+.side-nav ul li:hover a{
+    transform: translateX(-100%);
+}
