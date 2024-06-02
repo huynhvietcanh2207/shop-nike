@@ -15,8 +15,13 @@ class Model
     public function select($sql)
     {
         $items = [];
-        $sql->execute();
-        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        $result = self::$connection->query($sql);
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $items[] = $row;
+            }
+        }
         return $items;
     }
+    
 }

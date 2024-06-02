@@ -46,71 +46,71 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
       if (isIntoView(button)) {
         button.classList.add("active");
-        console.log('Class active đã được thêm vào');
+        // console.log('Class active đã được thêm vào');
       }
       if (isIntoView(button4d)) {
         button4d.classList.add("active");
-        console.log('Class active đã được thêm vào');
+      //   console.log('Class active đã được thêm vào');
       }
       if (isIntoView(sectionNike)) {
         sectionNike.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(shoes)) {
         shoes.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(aboutfont)) {
         aboutfont.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(aboutMain)) {
         aboutMain.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(reviewFont)) {
         reviewFont.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(box1)) {
         box1.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(box2)) {
         box2.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(servicesFont)) {
         servicesFont.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(servicesCards)) {
         servicesCards.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(galleryy)) {
         galleryy.classList.add("active");
-        console.log('Class active đã được thêm a vào');
+        // console.log('Class active đã được thêm a vào');
       }
       if (isIntoView(services11)) {
         services11.classList.add("active");
-        console.log('Class active đã được thêm 1 vào');
+        // console.log('Class active đã được thêm 1 vào');
       }
       if (isIntoView(services22)) {
         services22.classList.add("active");
-        console.log('Class active đã được thêm 2 vào');
+        // console.log('Class active đã được thêm 2 vào');
       }
       if (isIntoView(textClaritas)) {
         textClaritas.classList.add("active");
-        console.log('Class active đã được thêm 2 vào');
+        // console.log('Class active đã được thêm 2 vào');
       }
       if (isIntoView(Claritas1)) {
         Claritas1.classList.add("active");
-        console.log('Class active đã được thêm 2 vào');
+        // console.log('Class active đã được thêm 2 vào');
       }
       if (isIntoView(Claritas2)) {
         Claritas2.classList.add("active");
-        console.log('Class active đã được thêm 2 vào');
+        // console.log('Class active đã được thêm 2 vào');
       }
     });
   });
