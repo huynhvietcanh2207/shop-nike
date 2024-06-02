@@ -30,9 +30,7 @@
                   :key="category.id"
                   class="nav-item"
                 >
-                  <a class="nav-link" :href="`#${category.name}`">{{
-                    category.name
-                  }}</a>
+                  <a class="nav-link" :href="`#${category.name}`">{{ category.name }}</a>
                 </li>
               </div>
               <li class="nav-item">

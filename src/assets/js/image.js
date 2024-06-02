@@ -9,7 +9,8 @@ galleryContainer.addEventListener('mousemove', function (e) {
 
 modal.addEventListener('show.bs.modal', event => {
     galleryContainer.style.top = '150%';
-})
+});
+
 modal.addEventListener('hide.bs.modal', event => {
     galleryContainer.style.top = '50%';
-})
+});

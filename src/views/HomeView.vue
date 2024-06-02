@@ -1,7 +1,9 @@
+
 <template>
+
   <div class="home">
     <HeaderView />
-
+     
     <!-- Header -->
     <header>
       <div id="textbanner">
@@ -18,7 +20,6 @@
         </div>
       </div>
     </header>
-
     <!-- buton 3d -->
     <div class="btn-3d">
       <a href="#">
@@ -30,7 +31,6 @@
         >
       </a>
     </div>
-
     <!-- Section -->
     <section class="section-nike">
       <div class="section-font">
@@ -69,20 +69,19 @@
                       alt="trainers"
                     />
                   </a>
-
                   <div class="name"><h2>{{ product.name }}</h2></div>
                   <div class="year">{{ new Date().getFullYear() }}</div>
                   <div class="image">
                     <a href="">
-                      <img
-                        :src="product.image"
+                    <img
+                        :src="'image/image_db/'+product.image"
                         class="img img-fluid"
                         :alt="product.name"
-                      />
+                      />    
                     </a>
                   </div>
                   <div class="footshoe">
-                    <span><sup>$</sup>{{ product.price }}</span>
+                    <span>Giá: {{ formatCurrency(product.price) }}</span>
                     <span>
                       <a href="" id="icon-next">
                         <i class="bi bi-arrow-right"></i>
@@ -113,7 +112,6 @@
         </div>
       </div>
     </section>
-
     <!-- about -->
     <div class="about" id="About">
       <div class="about_font">
@@ -133,7 +131,6 @@
             <img src="image/den4.png" id="imagebox" class="big-photo" />
           </div>
         </div>
-
         <div class="about_text">
           <div class="snow-canvas"></div>
           <p>
@@ -451,13 +448,11 @@
     <FooterView />
   </div>
 </template>
-
 <script>
 import axios from "axios";
-// import HeaderView from './views/Header.vue';
-// import FooterView from './views/Footer.vue';
 import HeaderView from "@/views/Header.vue";
 import FooterView from "@/views/Footer.vue";
+
 
 export default {
   name: "HomeView",
@@ -478,6 +473,10 @@ export default {
         full.src = small.src;
       }
     },
+  formatCurrency(price) {
+      // Định dạng số thành tiền tệ Việt Nam
+      return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+    }
   },
   mounted() {
     axios
@@ -490,5 +489,8 @@ export default {
       });
   },
 };
-</script>
+// console.log(">>> image:",products.showImage);
+</script scope>
+
+
 
