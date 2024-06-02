@@ -1,31 +1,18 @@
-
-
-
 <template>
   <!-- Nav -->
   <div id="navmenu">
     <div id="toggle">
       <i class="bi bi-list"></i>
     </div>
-    <nav
-      class="navbar navbar-expand-sm fixed-top custom-navbar"
-    >
+    <nav class="navbar navbar-expand-sm fixed-top custom-navbar">
       <div class="container-fluid w-100">
         <a class="navbar-brand" href="">
           <div class="nike"></div>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mynavbar"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="mynavbar"
-        >
+        <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
           <ul class="navbar-nav text-uppercase">
             <li class="nav-item">
               <a class="nav-link" href="">Men</a>
@@ -46,11 +33,7 @@
         </div>
         <!-- search -->
         <div class="input-group">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Search"
-          />
+          <input type="search" class="form-control rounded" placeholder="Search" />
           <button type="button" class="btn" data-mdb-ripple-init>
             <i class="bi bi-search"></i>
           </button>
@@ -90,12 +73,8 @@
 
   <div class="btn-3d">
     <a href="#">
-      <span style="font-size: 0.8em; font-weight: bold" class="front"
-        >SHOP NOW</span
-      >
-      <span style="font-size: 0.8em; font-weight: bold" class="top"
-        >SHOP NOW</span
-      >
+      <span style="font-size: 0.8em; font-weight: bold" class="front">SHOP NOW</span>
+      <span style="font-size: 0.8em; font-weight: bold" class="top">SHOP NOW</span>
     </a>
   </div>
   <!-- Section -->
@@ -123,27 +102,60 @@
     <div class="shoes">
       <div class="container" style="margin-block: 60px">
         <div class="row">
-          <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          <div v-for="product in products" :key="product.id"class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
+                </a>
+
+                <div class="name">{{ product.name }}</div>
+                <div class="year">{{ new Date().getFullYear() }}</div>
+                <div class="image">
+                  <a href="">
+                    <img :src="product.image" class="img img-fluid" :alt="product.name" />
+                  </a>
+                </div>
+                <div class="footshoe">
+                  <span><sup>$</sup>{{ product.price }}</span>
+                  <span>
+                    <a href="" id="icon-next">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </span>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-9 col-12">
+                        <span>
+                          <i class="bi bi-eye-fill"></i>
+                        </span>
+                      </div>
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <button class="tn badge text-bg-secondary">
+                          <i class="bi bi-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#" class="btn-animation">
+                    <div class="text">BUY</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
+            <div class="p-5 text-light">
+              <div class="shoe-nike">
+                <a class="icon-shoe" href="">
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -173,28 +185,17 @@
               </div>
             </div>
           </div>
-          
-           <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -224,27 +225,17 @@
               </div>
             </div>
           </div>
-           <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -274,127 +265,17 @@
               </div>
             </div>
           </div>
-           <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
-                </div>
-                <div class="footshoe">
-                  <span><sup>$</sup>1500.00</span>
-                  <span>
-                    <a href="" id="icon-next">
-                      <i class="bi bi-arrow-right"></i>
-                    </a>
-                  </span>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-9 col-12">
-                        <span>
-                          <i class="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
-                      <div class="col-md-3 col-sm-6 col-12">
-                        <button class="tn badge text-bg-secondary">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="#" class="btn-animation">
-                    <div class="text">BUY</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> 
-          <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
-            <div class="p-5 text-light">
-              <div class="shoe-nike">
-                <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
-                </a>
-
-                <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
-                <div class="year">2024</div>
-                <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
-                </div>
-                <div class="footshoe">
-                  <span><sup>$</sup>1500.00</span>
-                  <span>
-                    <a href="" id="icon-next">
-                      <i class="bi bi-arrow-right"></i>
-                    </a>
-                  </span>
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-9 col-12">
-                        <span>
-                          <i class="bi bi-eye-fill"></i>
-                        </span>
-                      </div>
-                      <div class="col-md-3 col-sm-6 col-12">
-                        <button class="tn badge text-bg-secondary">
-                          <i class="bi bi-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="#" class="btn-animation">
-                    <div class="text">BUY</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> 
-          <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
-            <div class="p-5 text-light">
-              <div class="shoe-nike">
-                <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
-                </a>
-
-                <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
-                <div class="year">2024</div>
-                <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -424,27 +305,17 @@
               </div>
             </div>
           </div>
-           <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -473,28 +344,58 @@
                 </div>
               </div>
             </div>
-          </div> 
-          <div
-            class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-          >
+          </div>
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
             <div class="p-5 text-light">
               <div class="shoe-nike">
                 <a class="icon-shoe" href="">
-                  <img
-                    src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                    alt="trainers"
-                  />
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                 </a>
 
                 <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
                 <div class="year">2024</div>
                 <div class="image">
-                  <a href=""
-                    ><img
-                      src="image/GiayTrangDen.png"
-                      class="img img-fluid"
-                      alt="ShoeTrangDen"
-                  /></a>
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
+                </div>
+                <div class="footshoe">
+                  <span><sup>$</sup>1500.00</span>
+                  <span>
+                    <a href="" id="icon-next">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </span>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-9 col-12">
+                        <span>
+                          <i class="bi bi-eye-fill"></i>
+                        </span>
+                      </div>
+                      <div class="col-md-3 col-sm-6 col-12">
+                        <button class="tn badge text-bg-secondary">
+                          <i class="bi bi-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="#" class="btn-animation">
+                    <div class="text">BUY</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
+            <div class="p-5 text-light">
+              <div class="shoe-nike">
+                <a class="icon-shoe" href="">
+                  <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
+                </a>
+
+                <div class="name">NIKE - WHITE x AIR JORDAN-1</div>
+                <div class="year">2024</div>
+                <div class="image">
+                  <a href=""><img src="image/GiayTrangDen.png" class="img img-fluid" alt="ShoeTrangDen" /></a>
                 </div>
                 <div class="footshoe">
                   <span><sup>$</sup>1500.00</span>
@@ -572,12 +473,8 @@
     </div>
     <div class="btn-4d">
       <a href="#">
-        <span style="font-size: 0.8em; font-weight: bold" class="front"
-          >SHOP NOW</span
-        >
-        <span style="font-size: 0.8em; font-weight: bold" class="top"
-          >SHOP NOW</span
-        >
+        <span style="font-size: 0.8em; font-weight: bold" class="front">SHOP NOW</span>
+        <span style="font-size: 0.8em; font-weight: bold" class="top">SHOP NOW</span>
       </a>
     </div>
   </div>
@@ -732,15 +629,12 @@
     <div class="container services_cards my-5">
       <div class="row services1 servicess">
         <div class="col-4">
-          <div
-            class="vienkimcuong"
-            style="
+          <div class="vienkimcuong" style="
               text-align: center;
               font-size: 50px;
               font-weight: bold;
               margin-bottom: 20px;
-            "
-          >
+            ">
             <i class="bi bi-truck"></i>
           </div>
           <h4 style="text-align: center">Fast Delivery</h4>
@@ -749,15 +643,12 @@
           </p>
         </div>
         <div class="col-4">
-          <div
-            class="gift"
-            style="
+          <div class="gift" style="
               text-align: center;
               font-size: 50px;
               font-weight: bold;
               margin-bottom: 20px;
-            "
-          >
+            ">
             <i class="bi bi-arrow-counterclockwise"></i>
           </div>
           <h4 style="text-align: center">10 Days Replacement</h4>
@@ -766,15 +657,12 @@
           </p>
         </div>
         <div class="col-4">
-          <div
-            class="cup"
-            style="
+          <div class="cup" style="
               text-align: center;
               font-size: 50px;
               font-weight: bold;
               margin-bottom: 20px;
-            "
-          >
+            ">
             <i class="bi bi-headset"></i>
           </div>
           <h4 style="text-align: center">24 x 7 Support</h4>
@@ -787,10 +675,7 @@
     <div class="container">
       <div class="row services2 servicess">
         <div class="col-4">
-          <div
-            class="vienkimcuong"
-            style="text-align: center; font-size: 50px; margin-bottom: 20px"
-          >
+          <div class="vienkimcuong" style="text-align: center; font-size: 50px; margin-bottom: 20px">
             <i class="bi bi-currency-exchange"></i>
           </div>
           <h4 style="text-align: center">Free 1st Exchange</h4>
@@ -802,10 +687,7 @@
           </p>
         </div>
         <div class="col-4">
-          <div
-            class="gift"
-            style="text-align: center; font-size: 50px; margin-bottom: 20px"
-          >
+          <div class="gift" style="text-align: center; font-size: 50px; margin-bottom: 20px">
             <i class="bi bi-tag-fill"></i>
           </div>
           <h4 style="text-align: center">Everyday Item Discount</h4>
@@ -817,10 +699,7 @@
           </p>
         </div>
         <div class="col-4">
-          <div
-            class="cup"
-            style="text-align: center; font-size: 50px; margin-bottom: 20px"
-          >
+          <div class="cup" style="text-align: center; font-size: 50px; margin-bottom: 20px">
             <i class="bi bi-percent"></i>
           </div>
           <h4 style="text-align: center">Member discount</h4>
@@ -848,13 +727,7 @@
         </h5>
       </div>
       <form action="" class="Claritas1" method="get">
-        <input
-          type="text"
-          name=""
-          placeholder="Your email address"
-          class="form-control"
-          id=""
-        />
+        <input type="text" name="" placeholder="Your email address" class="form-control" id="" />
       </form>
       <a href="#" class="btn-animation mt-3 Claritas2">
         <div class="text">Subcribe</div>
@@ -868,14 +741,10 @@
     <div class="footer_main">
       <div class="tag">
         <h1>Contact</h1>
-        <a href="#"
-          ><i class="bi bi-house"></i>Tăng Nhơn Phú A, Thành Phố Thủ Đức, TP Hồ
-          Chí Minh</a
-        >
+        <a href="#"><i class="bi bi-house"></i>Tăng Nhơn Phú A, Thành Phố Thủ Đức, TP Hồ
+          Chí Minh</a>
         <a href="#"><i class="bi bi-telephone"></i>+84 342 779 848</a>
-        <a href="#"
-          ><i class="bi bi-envelope"></i>huynhvietcanh2004@gmail.com</a
-        >
+        <a href="#"><i class="bi bi-envelope"></i>huynhvietcanh2004@gmail.com</a>
       </div>
 
       <div class="tag">
@@ -895,18 +764,35 @@
 </template>
 
 <script>
-export default {
-  name: "App",
-  methods: {
-    showImage(event) {
-      const small = event.target;
-      const full = document.getElementById("imagebox");
-      if (full) {
-        full.src = small.src;
-      }
+  import axios from 'axios';
+
+  export default {
+    name: "App",
+    data() {
+      return {
+        products: [],  // Khai báo mảng products trong data
+      };
     },
-  },
-};
+    methods: {
+      showImage(event) {
+        const small = event.target;
+        const full = document.getElementById("imagebox");
+        if (full) {
+          full.src = small.src;
+        }
+      },
+    },
+    mounted() {
+      axios
+        .get('http://localhost/path-to-your-api/api.php?endpoint=products')
+        .then(response => {
+          this.products = response.data;
+        })
+        .catch(error => {
+          console.error('There was an error!', error);
+        });
+    },
+  };
 </script>
 <style scoped>
 </style>
