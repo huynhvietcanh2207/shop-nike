@@ -22,12 +22,8 @@
     <!-- buton 3d -->
     <div class="btn-3d">
       <a href="#">
-        <span style="font-size: 0.8em; font-weight: bold" class="front"
-          >SHOP NOW</span
-        >
-        <span style="font-size: 0.8em; font-weight: bold" class="top"
-          >SHOP NOW</span
-        >
+        <span style="font-size: 0.8em; font-weight: bold" class="front">SHOP NOW</span>
+        <span style="font-size: 0.8em; font-weight: bold" class="top">SHOP NOW</span>
       </a>
     </div>
 
@@ -39,7 +35,7 @@
         <h1>NICE<span>ZEGAMA 2</span></h1>
       </div>
 
-      <div class="gallery-container">
+      <!-- <div class="gallery-container">
         <div class="gallery">
           <img src="/image/j-crew.jpg" class="photo" alt="" />
           <img src="/image/giay4.jpg" class="photo" alt="" />
@@ -51,34 +47,29 @@
           <img src="/image/adidas.jpg" class="photo" alt="" />
           <img src="/image/adidas.jpg" class="photo" alt="" />
         </div>
+      </div> -->
+      <div class="label-product">
+        <h1><span>Product</span></h1>
       </div>
       <!-- product -->
       <div class="shoes">
         <div class="container" style="margin-block: 60px">
           <div class="row">
-            <div
-              v-for="product in products"
-              :key="product.id"
-              class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product"
-            >
+            <div v-for="product in products" :key="product.id"
+              class="col-md-3 col-sm-6 col-12 d-flex justify-content-center list-product">
               <div class="p-5 text-light">
                 <div class="shoe-nike">
                   <a class="icon-shoe" href="">
-                    <img
-                      src="https://img.icons8.com/laces/64/4D4D4D/trainers.png"
-                      alt="trainers"
-                    />
+                    <img src="https://img.icons8.com/laces/64/4D4D4D/trainers.png" alt="trainers" />
                   </a>
 
-                  <div class="name"><h2>{{ product.name }}</h2></div>
+                  <div class="name">
+                    <h2>{{ product.name }}</h2>
+                  </div>
                   <div class="year">{{ new Date().getFullYear() }}</div>
                   <div class="image">
                     <a href="">
-                      <img
-                        :src="product.image"
-                        class="img img-fluid"
-                        :alt="product.name"
-                      />
+                      <img :src="'/image/' + product.image" class="img img-fluid" :alt="product.name" />
                     </a>
                   </div>
                   <div class="footshoe">
@@ -102,8 +93,8 @@
                         </div>
                       </div>
                     </div>
-                    <a href="#" class="btn-animation">
-                      <div class="text">BUY</div>
+                    <a href="#" class="btn-animation" @click.prevent="addToCart(product)">
+                      <div class="text">Add Cart</div>
                     </a>
                   </div>
                 </div>
@@ -112,6 +103,22 @@
           </div>
         </div>
       </div>
+      <!-- Pagination -->
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" :class="{ disabled: currentPage === 1 }">
+            <a class="page-link" href="#" @click.prevent="changePage(currentPage - 1)">Previous</a>
+          </li>
+          <li class="page-item" v-for="page in totalPages" :key="page" :class="{ active: page === currentPage }">
+            <a class="page-link" href="#" @click.prevent="changePage(page)">{{
+              page
+              }}</a>
+          </li>
+          <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+            <a class="page-link" href="#" @click.prevent="changePage(currentPage + 1)">Next</a>
+          </li>
+        </ul>
+      </nav>
     </section>
 
     <!-- about -->
@@ -159,12 +166,8 @@
       </div>
       <div class="btn-4d">
         <a href="#">
-          <span style="font-size: 0.8em; font-weight: bold" class="front"
-            >SHOP NOW</span
-          >
-          <span style="font-size: 0.8em; font-weight: bold" class="top"
-            >SHOP NOW</span
-          >
+          <span style="font-size: 0.8em; font-weight: bold" class="front">SHOP NOW</span>
+          <span style="font-size: 0.8em; font-weight: bold" class="top">SHOP NOW</span>
         </a>
       </div>
     </div>
@@ -319,15 +322,12 @@
       <div class="container services_cards my-5">
         <div class="row services1 servicess">
           <div class="col-4">
-            <div
-              class="vienkimcuong"
-              style="
+            <div class="vienkimcuong" style="
                 text-align: center;
                 font-size: 50px;
                 font-weight: bold;
                 margin-bottom: 20px;
-              "
-            >
+              ">
               <i class="bi bi-truck"></i>
             </div>
             <h4 style="text-align: center">Fast Delivery</h4>
@@ -336,15 +336,12 @@
             </p>
           </div>
           <div class="col-4">
-            <div
-              class="gift"
-              style="
+            <div class="gift" style="
                 text-align: center;
                 font-size: 50px;
                 font-weight: bold;
                 margin-bottom: 20px;
-              "
-            >
+              ">
               <i class="bi bi-arrow-counterclockwise"></i>
             </div>
             <h4 style="text-align: center">10 Days Replacement</h4>
@@ -353,15 +350,12 @@
             </p>
           </div>
           <div class="col-4">
-            <div
-              class="cup"
-              style="
+            <div class="cup" style="
                 text-align: center;
                 font-size: 50px;
                 font-weight: bold;
                 margin-bottom: 20px;
-              "
-            >
+              ">
               <i class="bi bi-headset"></i>
             </div>
             <h4 style="text-align: center">24 x 7 Support</h4>
@@ -374,10 +368,7 @@
       <div class="container">
         <div class="row services2 servicess">
           <div class="col-4">
-            <div
-              class="vienkimcuong"
-              style="text-align: center; font-size: 50px; margin-bottom: 20px"
-            >
+            <div class="vienkimcuong" style="text-align: center; font-size: 50px; margin-bottom: 20px">
               <i class="bi bi-currency-exchange"></i>
             </div>
             <h4 style="text-align: center">Free 1st Exchange</h4>
@@ -389,10 +380,7 @@
             </p>
           </div>
           <div class="col-4">
-            <div
-              class="gift"
-              style="text-align: center; font-size: 50px; margin-bottom: 20px"
-            >
+            <div class="gift" style="text-align: center; font-size: 50px; margin-bottom: 20px">
               <i class="bi bi-tag-fill"></i>
             </div>
             <h4 style="text-align: center">Everyday Item Discount</h4>
@@ -404,10 +392,7 @@
             </p>
           </div>
           <div class="col-4">
-            <div
-              class="cup"
-              style="text-align: center; font-size: 50px; margin-bottom: 20px"
-            >
+            <div class="cup" style="text-align: center; font-size: 50px; margin-bottom: 20px">
               <i class="bi bi-percent"></i>
             </div>
             <h4 style="text-align: center">Member discount</h4>
@@ -435,13 +420,7 @@
           </h5>
         </div>
         <form action="" class="Claritas1" method="get">
-          <input
-            type="text"
-            name=""
-            placeholder="Your email address"
-            class="form-control"
-            id=""
-          />
+          <input type="text" name="" placeholder="Your email address" class="form-control" id="" />
         </form>
         <a href="#" class="btn-animation mt-3 Claritas2">
           <div class="text">Subcribe</div>
@@ -453,42 +432,73 @@
 </template>
 
 <script>
-import axios from "axios";
-// import HeaderView from './views/Header.vue';
-// import FooterView from './views/Footer.vue';
-import HeaderView from "@/views/Header.vue";
-import FooterView from "@/views/Footer.vue";
+  import axios from "axios";
+  import HeaderView from "@/views/Header.vue";
+  import FooterView from "@/views/Footer.vue";
 
-export default {
-  name: "HomeView",
-  components: {
-    HeaderView,
-    FooterView,
-  },
-  data() {
-    return {
-      products: [], // Khai báo mảng products trong data
-    };
-  },
-  methods: {
-    showImage(event) {
-      const small = event.target;
-      const full = document.getElementById("imagebox");
-      if (full) {
-        full.src = small.src;
-      }
+  export default {
+    name: "HomeView",
+    components: {
+      HeaderView,
+      FooterView,
     },
-  },
-  mounted() {
-    axios
-      .get("http://localhost/shop-nike/src/app/api/api.php/products")
-      .then((response) => {
-        this.products = response.data;
-      })
-      .catch((error) => {
-        console.error("There was an error!", error);
-      });
-  },
-};
-</script>
+    data() {
+      return {
+        products: [],
+        currentPage: 1,
+        totalPages: 1,
+      };
+    },
+    methods: {
+      showImage(event) {
+        const small = event.target;
+        const full = document.getElementById("imagebox");
+        if (full) {
+          full.src = small.src;
+        }
+      },
+      fetchProducts(page = 1) {
+        axios
+          .get(
+            `http://localhost/shop-nike/src/app/api/api.php/products?page=${page}&limit=4`
+          )
+          .then((response) => {
+            this.products = response.data.products;
+            this.totalPages = response.data.totalPages;
+            this.currentPage = response.data.currentPage;
+          })
+          .catch((error) => {
+            console.error("There was an error!", error);
+          });
+      },
+      changePage(page) {
+        if (page >= 1 && page <= this.totalPages) {
+          this.fetchProducts(page);
+        }
+      },
 
+      addToCart(product) {
+      // Gửi yêu cầu POST để thêm sản phẩm vào giỏ hàng
+      axios
+        .post("http://localhost/shop-nike/src/app/api/cart", {
+          user_id: this.userId,
+          product_id: product.id,
+          quantity: 1, // Số lượng mặc định khi thêm vào giỏ hàng
+        })
+        .then((response) => {
+          // Xử lý phản hồi từ API
+          console.log(response.data);
+          // Hiển thị thông báo hoặc cập nhật giao diện cho người dùng
+        })
+        .catch((error) => {
+          console.error("Error adding item to cart: ", error);
+          // Hiển thị thông báo lỗi cho người dùng nếu cần thiết
+        });
+    },
+    },
+    mounted() {
+      // Lấy danh sách sản phẩm khi component được mount
+      this.fetchProducts();
+    },
+  };
+</script>
