@@ -5,11 +5,12 @@ class Database {
     public function __construct(){
         if(!self::$connection){
             self::$connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME,DB_PORT);
-            self::$connection->set_charset('utf8');
+            self::$connection->set_charset(DB_CHARSET);
             // echo 'Kết nối thành công';
            }
      return self::$connection;
     }
 }
+
 $db = new Database();
 

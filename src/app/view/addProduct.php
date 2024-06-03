@@ -1,12 +1,36 @@
-<template>
-    <!-- <h4 class="text-center" style="font-size: 1.5em; font-weight: bold;">Quản lý sản phẩm</h4> -->
-    <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/styleindex.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/button.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/navbar.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/fall.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/image.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/btnanimation.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/all.min.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/btnManagement.css">
+    <link rel="stylesheet" href="../../../../shop-nike/public/css/formManagement.css">
+</head>
+<body>
+<div class="container">
     <div class="form_area">
         <p class="title">Add Product</p>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="../controller/addProduct.php" method="post" enctype="multipart/form-data">
             <div class="form_group">
                 <label class="sub_title" for="name">Id:</label>
-                <input placeholder="Enter your id" class="form_style" type="text">
+                <input placeholder="Enter your id" class="form_style" name="id" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Name:</label>
@@ -49,92 +73,5 @@
         
     </a></form></div><a class="link" href="">
 </a></div>
-  </template>
-  
-  <script>
-  
- 
-  </script>
-  
-  <style scoped>
-  /* CSS cho App.vue */
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-  .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.form_area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: white;
-  height: auto;
-  width:auto;
-  /* auto là tự canh */
-  border: 2px solid #264143;
-  border-radius: 20px;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
-}
-
-.title {
-  color: #264143;
-  font-weight: 900;
-  font-size: 1.5em;
-  margin-top: 20px;
-}
-
-.sub_title {
-  font-weight: 600;
-  margin: 5px 0;
-}
-
-.form_group {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  margin: 10px;
-}
-
-.form_style {
-  outline: none;
-  border: 2px solid #264143;
-  box-shadow: 3px 4px 0px 1px #E99F4C;
-  width: 290px;
-  padding: 12px 10px;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-.form_style:focus, .btn:focus {
-  transform: translateY(4px);
-  box-shadow: 1px 2px 0px 0px #E99F4C;
-}
-
-.btn {
-  padding: 15px;
-  margin: 25px 0px;
-  width: 290px;
-  font-size: 15px;
-  background: rgb(188, 234, 188);
-  border-radius: 10px;
-  font-weight: 800;
-  box-shadow: 3px 3px 0px 0px #E99F4C;
-}
-
-.btn:hover {
-  opacity: .9;
-}
-
-.link {
-  font-weight: 800;
-  color: #264143;
-  padding: 5px;
-}
-  </style>
-  
+</body>
+</html>

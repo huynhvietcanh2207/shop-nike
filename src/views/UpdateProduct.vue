@@ -6,39 +6,39 @@
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form_group">
                 <label class="sub_title" for="name">Id:</label>
-                <input placeholder="Enter your full name" class="form_style" type="text">
+                <input placeholder="Enter your id" class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Name:</label>
-                <input placeholder="Enter your email"  name="name"  class="form_style" type="text">
+                <input placeholder="Enter your name"  name="name"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Price:</label>
-                <input placeholder="Enter your email"  name="price"  class="form_style" type="text">
+                <input placeholder="Enter your price"  name="price"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Image:</label>
-                <input placeholder="Enter your email"  name="image"  class="form_style" type="file">
+                <input placeholder="Enter your image"  name="image"  class="form_style" type="file">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Description:</label>
-                <input placeholder="Enter your email"  name="description"  class="form_style" type="text">
+                <input placeholder="Enter your description"  name="description"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Size:</label>
-                <input placeholder="Enter your email"  name="size"  class="form_style" type="text">
+                <input placeholder="Enter your size"  name="size"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Views:</label>
-                <input placeholder="Enter your email"  name="views"  class="form_style" type="text">
+                <input placeholder="Enter your views"  name="views"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Likes:</label>
-                <input placeholder="Enter your email"  name="likes"  class="form_style" type="text">
+                <input placeholder="Enter your likes"  name="likes"  class="form_style" type="text">
             </div>
             <div class="form_group">
                 <label class="sub_title" for="email">Categories_Id:</label>
-                <input placeholder="Enter your email"  name="categories_id"  class="form_style" type="text">
+                <input placeholder="Enter your categories_id"  name="categories_id"  class="form_style" type="text">
             </div>
           
             <div>

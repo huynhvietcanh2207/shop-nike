@@ -5,30 +5,11 @@
    
       <!-- dssp có action 3 -->
       <!-- <a href="../app/"></a> -->
-       <button class="btn"><router-link style="text-decoration: none; color: white; font-weight: bold;" to="/AddProduct">Add</router-link> </button>
+       <!-- <button class="btn"><router-link style="text-decoration: none; color: white; font-weight: bold;" to="/AddProduct">Add</router-link> </button>
        <button>Update</button>
-       <button>Delete</button>
+       <button>Delete</button> -->
        <section class="section-nike">
-      <div class="section-font">
-        <h1>Tame the Terrain<span></span></h1>
-
-        <h1>NICE<span>ZEGAMA 2</span></h1>
-      </div>
-
-      <div class="gallery-container">
-        <div class="gallery">
-          <!-- <div class="row"></div> -->
-          <img src="/image/j-crew.jpg" class="photo" alt="" />
-          <img src="/image/giay4.jpg" class="photo" alt="" />
-          <img src="/image/WB257535_1_enlarged.webp" class="photo" alt="" />
-          <img src="/image/adidas.jpg" class="photo" alt="" />
-          <img src="/image/j-crew.jpg" class="photo" alt="" />
-          <img src="/image/adidas.jpg" class="photo" alt="" />
-          <img src="/image/WB257535_1_enlarged.webp" class="photo" alt="" />
-          <img src="/image/adidas.jpg" class="photo" alt="" />
-          <img src="/image/adidas.jpg" class="photo" alt="" />
-        </div>
-      </div>
+     
       <!-- product -->
       <div class="shoes">
         <div class="container" style="margin-block: 60px">
@@ -135,7 +116,7 @@ export default {
 };
   </script>
   
-  <style scoped>
+  <!-- <style scoped>
   /* CSS cho App.vue */
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -174,5 +155,6 @@ export default {
 .btn:hover::before {
   width: 160%;
 }
+
   </style>
-  
+   -->
