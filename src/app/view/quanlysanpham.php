@@ -9,8 +9,10 @@ if (isset($_POST['deleteId'])) {
 }
 $page =1;
 $perpage=5;
+
 $totalSP = $product_db->getAllProducts();
 $total=sizeof($totalSP);
+$pageMax=ceil($total/$perpage);
 if(isset($_GET['page'])){
     $page=$_GET['page'];
 }
@@ -52,7 +54,7 @@ if(isset($_GET['page'])){
     <!-- dssp có action 3 -->
     <!-- <a href="../app/"></a> -->
 
-    <a class="btn" href="addProduct.php" class="">Add new product</a>
+    <a class="btn-M" href="addProduct.php" class="">Add new product</a>
     <table class="table">
         <caption>List of product</caption>
         <thead>
@@ -109,7 +111,7 @@ if(isset($_GET['page'])){
                     <td>
                         <div class="row">
                             <div class="col-6">
-                                <a class="btn" href="updateProduct.php?id=<?php echo $item['id'] ?>" class="">Update</a>
+                                <a class="btn-M" href="updateProduct.php?id=<?php echo $item['id'] ?>" class="">Update</a>
 
                             </div>
                             <div class="col-6">
@@ -117,7 +119,7 @@ if(isset($_GET['page'])){
                                 <form action="quanlysanpham.php" method="post"
                                     onsubmit="return confirm('Bạn có muốn xóa không?')">
                                     <input type="hidden" name="deleteId" value="<?php echo $item['id'] ?>">
-                                    <button type="submit" class="btn">Delete</button>
+                                    <button type="submit" class="btn btn-M">Delete</button>
                                 </form>
 
                             </div>
@@ -139,7 +141,7 @@ if(isset($_GET['page'])){
 
     <ul class="pagination">
         <li class="page-item">
-            <a href="#" class="page-link">Previous</a>
+            <a href="?page=<?php echo ($page>1) ? $page -1 :$page ?>" class="page-link">Previous</a>
         </li>
         
         <?php
@@ -148,7 +150,7 @@ if(isset($_GET['page'])){
           <!-- <li class="page-item"><a href="#" class="page-link">4</a></li> -->
          
           <li class="page-item">
-            <a href="#" class="page-link">Next</a>
+            <a href="?page=<?php echo ($page<$pageMax) ? $page +1 :$page ?>" class="page-link">Next</a>
           </li>
         </ul>
     <?php
