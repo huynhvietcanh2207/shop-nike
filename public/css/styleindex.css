@@ -78,10 +78,10 @@ body {
     animation-delay: .5s;
 }
 
-nav ul li {
+/* nav ul li {
     padding: 30px;
 
-}
+} */
 
 
 @keyframes move {
@@ -580,6 +580,33 @@ header {
 }
 
 .Claritas2.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+/* label-product */
+.label-product {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    margin-top: 100px;
+    
+}
+
+.label-product.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+/* navigation */
+.pagination {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+   /* background-color: #1ca89e; */
+   color: #0a171b;
+    
+}
+
+.pagination.active {
     opacity: 1;
     transform: translateY(0px);
 }

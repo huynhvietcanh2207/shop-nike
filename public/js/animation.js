@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const textClaritas = document.querySelector('.textClaritas');
     const Claritas1 = document.querySelector('.Claritas1');
     const Claritas2 = document.querySelector('.Claritas2');
-  
+    const labelProduct = document.querySelector('.label-product');
+    const navigation = document.querySelector('.pagination');
+
     function isIntoView(el) {
       if (el) {
         const rect = el.getBoundingClientRect();
@@ -42,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     isIntoView(textClaritas);
     isIntoView(Claritas1);
     isIntoView(Claritas2);
-  
+    isIntoView(labelProduct);
+    isIntoView(navigation);
+
     window.addEventListener("scroll", () => {
       if (isIntoView(button)) {
         button.classList.add("active");
@@ -110,6 +114,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (isIntoView(Claritas2)) {
         Claritas2.classList.add("active");
+        // console.log('Class active đã được thêm 2 vào');
+      }
+      if (isIntoView(labelProduct)) {
+        labelProduct.classList.add("active");
+        // console.log('Class active đã được thêm 2 vào');
+      }
+      if (isIntoView(navigation)) {
+        navigation.classList.add("active");
         // console.log('Class active đã được thêm 2 vào');
       }
     });

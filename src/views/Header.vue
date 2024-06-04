@@ -10,31 +10,20 @@
           <a class="navbar-brand" href="">
             <div class="nike"></div>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mynavbar"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="mynavbar"
-          >
+          <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
             <ul class="navbar-nav text-uppercase">
               <div class="category">
-                <!-- category dùng ở đây nhá -->
-                <li
-                  v-for="category in categories"
-                  :key="category.id"
-                  class="nav-item"
-                >
-                  <a class="nav-link" :href="`#${category.name}`">{{
-                    category.name
-                  }}</a>
-                </li>
+                <ul>
+                  <li v-for="category in categories" :key="category.id" class="nav-item">
+                    <router-link :to="{ name: 'categoryproduct', params: { categoryName: category.name }}"
+                      class="nav-link">{{ category.name }}</router-link>
+                  </li>
+                </ul>
               </div>
+
               <li class="nav-item">
                 <a class="nav-link" href="">Favorites</a>
               </li>
@@ -51,11 +40,7 @@
           </div>
           <!-- search -->
           <div class="input-group">
-            <input
-              type="search"
-              class="form-control rounded"
-              placeholder="Search"
-            />
+            <input type="search" class="form-control rounded" placeholder="Search" />
             <button type="button" class="btn" data-mdb-ripple-init>
               <i class="bi bi-search"></i>
             </button>
@@ -63,7 +48,8 @@
           <!-- icon -->
           <div class="icons">
             <i class="bi bi-heart-fill"></i>
-            <i class="bi bi-cart"></i>
+            <router-link to="/cart"> <i class="bi bi-cart"></i></router-link>
+
             <div class="dropdown">
               <router-link to="/login" class="profile-link">
                 <i class="bi bi-person-circle"></i>
@@ -88,29 +74,27 @@
   </nav>
 </template>
 <script>
-import axios from "axios";
+  import axios from "axios";
 
-export default {
-  name: "HeaderView",
-  data() {
-    return {
-      categories: [],
-    };
-  },
-  mounted() {
-    // Call the API to get categories
-    axios
-      .get("http://localhost/shop-nike/src/app/api/api.php/categories")
-      .then((response) => {
-        // Store categories in data
-        this.categories = response.data;
-      })
-      .catch((error) => {
-        console.error("Error fetching categories:", error);
-      });
-  },
-};
+  export default {
+    data() {
+      return {
+        categories: [], // Thêm mảng categories để lưu danh sách danh mục
+      };
+    },
+    mounted() {
+      // Gọi API để lấy danh sách danh mục
+      axios
+        .get('http://localhost/shop-nike/src/app/api/api.php/categories')
+        .then((response) => {
+          this.categories = response.data;
+        })
+        .catch((error) => {
+          console.error('Error fetching categories:', error);
+        });
+    },
+  };
 </script>
-<style >
-/* CSS cho dropdown menu */
+<style>
+  /* CSS cho dropdown menu */
 </style>
