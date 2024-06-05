@@ -83,12 +83,9 @@
                 this.cart = this.cart.filter((cartItem) => cartItem.id !== item.id);
                 this.saveCart();
             },
-            saveCart() {
-                // Xóa tất cả các mục cũ trong giỏ hàng của người dùng
-                axios
+            saveCart() {                axios
                     .delete("http://localhost/shop-nike/src/app/api/api.php/cart/1" + this.userId)
                     .then(() => {
-                        // Thêm các mục mới vào giỏ hàng
                         this.cart.forEach((item) => {
                             axios
                                 .post("/api/cart", {
@@ -97,7 +94,7 @@
                                     quantity: item.quantity,
                                 })
                                 .then(() => {
-                                    // Sau khi thêm vào giỏ hàng, gọi lại phương thức lấy giỏ hàng
+                                   
                                     this.fetchCart();
                                 })
                                 .catch((error) => {
@@ -110,7 +107,6 @@
                     });
             },
             checkout() {
-                // Xóa giỏ hàng của người dùng từ cơ sở dữ liệu
                 axios
                     .delete("/api/cart/" + this.userId)
                     .then(() => {
