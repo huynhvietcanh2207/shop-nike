@@ -25,15 +25,28 @@ const routes = [
     component: () => import(/* webpackChunkName: "header" */ '../views/Header.vue')
   },
   {
-    path: '/category/:categoryName', // Thay đổi từ categories_id thành categoryName
+    path: '/category/:categoryId', 
     name: 'categoryproduct',
     component: () => import(/* webpackChunkName: "categoryproduct" */ '../views/CategoryProduct.vue'),
     props: true
   },
   {
-    path: '/cart', // Thay đổi từ categories_id thành categoryName
+    path: '/cart', 
     name: 'cart',
     component: () => import(/* webpackChunkName: "categoryproduct" */ '../views/Cart.vue'),
+    props: true
+  }
+  ,
+  {
+    path: '/search', 
+    name: 'search',
+    component: () => import(/* webpackChunkName: "categoryproduct" */ '../views/SearchPage.vue'),
+    props: true
+  },
+  {
+    path: '/support', 
+    name: 'support',
+    component: () => import(/* webpackChunkName: "categoryproduct" */ '../views/Support.vue'),
     props: true
   }
 ];

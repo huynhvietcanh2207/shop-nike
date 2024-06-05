@@ -24,7 +24,6 @@ $requestData = json_decode(file_get_contents('php://input'), true);
 
 if ($requestMethod === 'POST') {
     if (strpos($_SERVER['REQUEST_URI'], '/register') !== false) {
-        // Gọi hàm đăng ký từ đối tượng User
         $result = $user->register($requestData['name'], $requestData['email'], $requestData['password']);
         if ($result) {
             echo json_encode(['success' => true]);
@@ -33,7 +32,6 @@ if ($requestMethod === 'POST') {
             echo json_encode(['success' => false, 'error' => 'Registration failed']);
         }
     } elseif (strpos($requestUri, '/login') !== false) {
-        // Gọi hàm đăng nhập từ đối tượng User
         $result = $user->login($requestData['email'], $requestData['password']);
         if ($result) {
             echo json_encode(['success' => true, 'user_id' => $result]);
@@ -46,12 +44,21 @@ if ($requestMethod === 'POST') {
         handleProductsGET($model);
     } elseif (strpos($requestUri, '/categories') !== false) {
         handleCategoriesGET($model);
-    } elseif (preg_match('/\/abc\/categories_id=(\d+)/', $requestUri, $matches)) {
-        $categories_id = $matches[1];
-        handleProductsByCategoryGET($model, $categories_id);
     } elseif (strpos($requestUri, '/cart') !== false) {
-        handleCartGET($model, $userId); // You need to provide $userId here
+        handleCartGET($model, $userId);
+    } 
+    elseif (isset($_GET['q']) && strpos($requestUri, '/search') !== false) {
+        $keyword = $_GET['q'];
+        handleSearchGET($model, $keyword);
     }
+}
+function handleSearchGET($model, $keyword)
+{
+    $sql = $model::$connection->prepare('SELECT * FROM products WHERE name LIKE ?');
+    $keyword = "%{$keyword}%";
+    $sql->bind_param('s', $keyword);
+    $result = $model->select($sql); 
+    echo json_encode($result);
 }
 
 function handleProductsGET($model)

@@ -10,7 +10,6 @@
     </div>
     <!-- product -->
     <div class="shoes">
-
       <section class="section-nike">
         <div class="section-font">
           <h1>Tame the Terrain<span></span></h1>
@@ -33,7 +32,11 @@
                   <div class="year">{{ new Date().getFullYear() }}</div>
                   <div class="image">
                     <a href="">
-                      <img :src="product.image" class="img img-fluid" :alt="product.name" />
+                      <div class="image">
+                        <a href="">
+                          <img :src="'/image/' + product.image" class="img img-fluid" :alt="product.name" />
+                        </a>
+                      </div>
                     </a>
                   </div>
                   <div class="footshoe">
@@ -66,10 +69,9 @@
             </div>
           </div>
         </div>
-
       </section>
     </div>
-    <!-- Pagination -->
+    <!-- Pagination
     <nav aria-label="Page navigation">
       <ul class="pagination justify-content-center">
         <li class="page-item" :class="{ disabled: currentPage === 1 }">
@@ -84,7 +86,7 @@
           <a class="page-link" href="#" @click.prevent="changePage(currentPage + 1)">Next</a>
         </li>
       </ul>
-    </nav>
+    </nav> --> 
     <FooterView />
   </div>
 </template>
@@ -119,11 +121,10 @@
           });
       },
       runAnimations() {
-        const button = document.querySelector('.btn-3d');
-        const shoes = document.querySelector('.shoes');
-        const servicesFont = document.querySelector('.section-font');
-        const navigation = document.querySelector('.pagination');
-
+        const button = document.querySelector(".btn-3d");
+        const shoes = document.querySelector(".shoes");
+        const servicesFont = document.querySelector(".section-font");
+        const navigation = document.querySelector(".pagination");
 
         function isIntoView(el) {
           if (el) {
@@ -135,7 +136,7 @@
         isIntoView(button);
         isIntoView(shoes);
         isIntoView(servicesFont);
- isIntoView(navigation);
+        isIntoView(navigation);
         window.addEventListener("scroll", () => {
           if (isIntoView(button)) {
             button.classList.add("active");
@@ -160,7 +161,12 @@
     },
     mounted() {
       const categoryId = this.$route.params.categoryId;
-      this.loadProductsByCategory(categoryId);
+      if (categoryId) {
+        this.loadProductsByCategory(categoryId);
+      } else {
+        alert("Category ID is missing from route params");
+        console.log("Category ID is missing from route params");
+      }
       this.runAnimations();
     },
   };

@@ -12,10 +12,10 @@ class Model
         return self::$connection;
     }
 
-    public function select($sql)
+    public static function select($sql)
     {
         $items = [];
-        $result = self::$connection->query($sql);
+        $result = self::$connection->query($sql); // Sử dụng $sql thay vì $stmt
         if ($result) {
             while ($row = $result->fetch_assoc()) {
                 $items[] = $row;
@@ -24,4 +24,14 @@ class Model
         return $items;
     }
     
+    // public static function select($sql)
+    // {
+    //     $sql->execute(); // Thực thi truy vấn
+    //     $result = $sql->get_result(); // Nhận kết quả từ truy vấn
+    //     $data = [];
+    //     while ($row = $result->fetch_assoc()) {
+    //         $data[] = $row;
+    //     }
+    //     return $data;
+    // }
 }
